@@ -3,104 +3,857 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Classroomly | Smart classroom management</title>
+  <meta name="description" content="Smart Classroom Management System">
+  <meta name="theme-color" content="#f3eee7">
+  <title>SmartClass — Classroom Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Main navigation">
+
+    <aside class="sidebar" id="sidebar">
+
       <div class="brand">
-        <div class="brand-mark"><span></span><span></span><span></span></div>
-        <span>classroomly</span>
-      </div>
-
-      <div class="workspace-switcher">
-        <div class="workspace-avatar">RS</div>
+        <div class="brand-symbol">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div>
-          <strong>Riverside School</strong>
-          <span>Admin workspace</span>
+          <strong>SmartClass</strong>
+          <small>CLASSROOM OS</small>
         </div>
-        <button class="icon-button small" aria-label="Switch workspace">⌄</button>
       </div>
 
-      <nav class="nav-list">
-        <p class="nav-label">Workspace</p>
-        <button class="nav-item active" data-view="Overview"><span class="nav-icon">⌂</span>Overview</button>
-        <button class="nav-item" data-view="Classes"><span class="nav-icon">▦</span>Classes <span class="nav-count">8</span></button>
-        <button class="nav-item" data-view="Students"><span class="nav-icon">♧</span>Students</button>
-        <button class="nav-item" data-view="Attendance"><span class="nav-icon">✓</span>Attendance</button>
-        <button class="nav-item" data-view="Calendar"><span class="nav-icon">□</span>Calendar</button>
-        <p class="nav-label second-label">Manage</p>
-        <button class="nav-item" data-view="Messages"><span class="nav-icon">▱</span>Messages <span class="unread-dot"></span></button>
-        <button class="nav-item" data-view="Reports"><span class="nav-icon">◒</span>Reports</button>
-      </nav>
+      <div class="sidebar-section">
+        <span class="sidebar-label">Workspace</span>
 
-      <div class="sidebar-bottom">
-        <div class="upgrade-card">
-          <div class="sparkle">✦</div>
-          <strong>Make every class count</strong>
-          <p>Unlock insights and save time with Pro.</p>
-          <button>Explore Pro <span>→</span></button>
-        </div>
-        <button class="nav-item"><span class="nav-icon">⚙</span>Settings</button>
-        <div class="profile-row">
+        <nav class="nav-menu">
+          <button class="nav-link active" data-page="dashboard">
+            <span class="nav-icon">⌂</span>
+            <span>Dashboard</span>
+          </button>
+
+          <button class="nav-link" data-page="classes">
+            <span class="nav-icon">▦</span>
+            <span>Classes</span>
+          </button>
+
+          <button class="nav-link" data-page="students">
+            <span class="nav-icon">♙</span>
+            <span>Students</span>
+          </button>
+
+          <button class="nav-link" data-page="attendance">
+            <span class="nav-icon">✓</span>
+            <span>Attendance</span>
+          </button>
+
+          <button class="nav-link" data-page="assignments">
+            <span class="nav-icon">◇</span>
+            <span>Assignments</span>
+          </button>
+
+          <button class="nav-link" data-page="timetable">
+            <span class="nav-icon">◫</span>
+            <span>Timetable</span>
+          </button>
+
+          <button class="nav-link" data-page="announcements">
+            <span class="nav-icon">◉</span>
+            <span>Announcements</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="sidebar-label">System</span>
+
+        <nav class="nav-menu">
+          <button class="nav-link" data-page="settings">
+            <span class="nav-icon">⚙</span>
+            <span>Settings</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="mini-profile">
           <div class="profile-avatar">AM</div>
-          <div><strong>Alex Morgan</strong><span>Administrator</span></div>
-          <button class="icon-button small" aria-label="Profile menu">•••</button>
+          <div>
+            <strong>Admin</strong>
+            <span>Class coordinator</span>
+          </div>
+          <button class="mini-more">•••</button>
         </div>
       </div>
+
     </aside>
 
-    <main class="main-content">
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <main class="main">
+
       <header class="topbar">
-        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="current-view">Overview</strong></div>
-        <div class="top-actions">
-          <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search anything..." aria-label="Search anything"></label>
-          <button class="icon-button notification-button" aria-label="Notifications"><span>♧</span><i></i></button>
-          <div class="top-avatar">AM</div>
+
+        <div class="mobile-brand">
+          <button class="menu-button" id="menuButton">☰</button>
+          <strong>SmartClass</strong>
         </div>
+
+        <div class="topbar-title">
+          <span>Academic workspace</span>
+          <strong id="pageTitle">Dashboard</strong>
+        </div>
+
+        <div class="topbar-actions">
+
+          <div class="global-search">
+            <span>⌕</span>
+            <input type="search" id="globalSearch" placeholder="Search anything...">
+            <kbd>⌘ K</kbd>
+          </div>
+
+          <button class="round-button" id="notificationButton">
+            ♢
+            <i></i>
+          </button>
+
+          <div class="top-avatar">AM</div>
+
+        </div>
+
       </header>
 
-      <div class="page-content">
-        <section class="welcome-row">
-          <div>
-            <p class="eyebrow">Monday, October 14, 2024</p>
-            <h1>Good morning, Alex <span>✦</span></h1>
-            <p class="subheading">Here is what is happening across your school today.</p>
+      <section class="page active" id="page-dashboard">
+
+        <div class="dashboard-hero">
+
+          <div class="hero-content">
+            <div class="eyebrow">
+              <span class="eyebrow-dot"></span>
+              Monday · 14 September 2026
+            </div>
+
+            <h1>
+              Good morning,<br>
+              <em>Admin.</em>
+            </h1>
+
+            <p>
+              Your classroom is ready. Here's what needs your attention today.
+            </p>
+
+            <div class="hero-actions">
+              <button class="button button-dark" data-modal="classModal">
+                + Create class
+              </button>
+
+              <button class="button button-light" data-page-target="attendance">
+                Take attendance
+              </button>
+            </div>
           </div>
-          <button class="primary-button" id="add-class-button"><span>＋</span> Add new class</button>
-        </section>
 
-        <section class="stat-grid" aria-label="School statistics">
-          <article class="stat-card coral-card"><div class="stat-icon">♧</div><div><span>Active students</span><strong>1,248</strong><small class="positive">↗️ 12.5% <em>vs last month</em></small></div><div class="mini-chart coral-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
-          <article class="stat-card yellow-card"><div class="stat-icon">▦</div><div><span>Classes today</span><strong>24</strong><small class="positive">↗️ 8.2% <em>vs last week</em></small></div><div class="mini-chart yellow-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
-          <article class="stat-card blue-card"><div class="stat-icon">✓</div><div><span>Average attendance</span><strong>94.8%</strong><small class="positive">↗️ 2.4% <em>vs last week</em></small></div><div class="mini-chart blue-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
-          <article class="stat-card purple-card"><div class="stat-icon">◒</div><div><span>Tasks to review</span><strong>18</strong><small class="neutral">• 6 due today</small></div><div class="mini-chart purple-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
-        </section>
+          <div class="hero-illustration">
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <div class="hero-book">
+              <div class="book-line"></div>
+              <div class="book-line short"></div>
+              <div class="book-line"></div>
+              <div class="book-line medium"></div>
+            </div>
+            <div class="hero-star">✦</div>
+            <div class="hero-dot dot-one"></div>
+            <div class="hero-dot dot-two"></div>
+          </div>
 
-        <section class="dashboard-grid">
-          <article class="panel attendance-panel">
-            <div class="panel-heading"><div><h2>Attendance overview</h2><p>Student presence across all classes</p></div><button class="select-button">This week <span>⌄</span></button></div>
-            <div class="attendance-summary"><strong>94.8%</strong><span class="positive">↗️ 2.4%</span><small>Average attendance</small></div>
-            <div class="chart-wrap"><div class="y-axis"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><div class="chart-area"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div><div class="bar-group"><div class="bar" style="height:82%"><span>92%</span></div><small>Mon</small></div><div class="bar-group"><div class="bar" style="height:91%"><span>96%</span></div><small>Tue</small></div><div class="bar-group"><div class="bar" style="height:88%"><span>95%</span></div><small>Wed</small></div><div class="bar-group"><div class="bar active" style="height:96%"><span>98%</span></div><small>Thu</small></div><div class="bar-group"><div class="bar" style="height:88%"><span>94%</span></div><small>Fri</small></div></div></div>
+        </div>
+
+        <div class="metric-grid">
+
+          <article class="metric-card metric-lavender">
+            <div class="metric-top">
+              <span>Students</span>
+              <div class="metric-symbol">♙</div>
+            </div>
+            <strong id="statStudents">124</strong>
+            <div class="metric-bottom">
+              <span class="positive">+8.4%</span>
+              <span>this semester</span>
+            </div>
           </article>
 
-          <article class="panel schedule-panel"><div class="panel-heading"><div><h2>Today's schedule</h2><p>Monday, October 14</p></div><button class="more-button" aria-label="More schedule options">•••</button></div><div class="schedule-list"><div class="schedule-item current"><time>08:30<br><small>09:30</small></time><div class="schedule-line"></div><div class="schedule-detail"><strong>Mathematics · Grade 9</strong><span>Room 204 <b>•</b> 28 students</span></div><span class="live-pill">Live</span></div><div class="schedule-item"><time>10:00<br><small>11:00</small></time><div class="schedule-line"></div><div class="schedule-detail"><strong>World History · Grade 10</strong><span>Room 108 <b>•</b> 24 students</span></div></div><div class="schedule-item"><time>11:30<br><small>12:30</small></time><div class="schedule-line"></div><div class="schedule-detail"><strong>Biology Lab · Grade 11</strong><span>Science Lab <b>•</b> 22 students</span></div></div><div class="schedule-item"><time>13:30<br><small>14:30</small></time><div class="schedule-line"></div><div class="schedule-detail"><strong>English Literature · Grade 8</strong><span>Room 301 <b>•</b> 26 students</span></div></div></div><button class="text-button">View full calendar <span>→</span></button></article>
-        </section>
+          <article class="metric-card metric-peach">
+            <div class="metric-top">
+              <span>Classes</span>
+              <div class="metric-symbol">▦</div>
+            </div>
+            <strong id="statClasses">12</strong>
+            <div class="metric-bottom">
+              <span>Today</span>
+              <span>4 scheduled</span>
+            </div>
+          </article>
 
-        <section class="lower-grid">
-          <article class="panel activity-panel"><div class="panel-heading"><div><h2>Recent activity</h2><p>Latest updates from your school</p></div><button class="text-button">View all <span>→</span></button></div><div class="activity-list"><div class="activity-item"><div class="activity-icon green">✓</div><div><strong>Attendance marked</strong><p>Sarah Chen marked attendance for Mathematics · Grade 9</p><small>Just now</small></div></div><div class="activity-item"><div class="activity-icon orange">▤</div><div><strong>New assignment created</strong><p>Mr. Thompson added “The Great Gatsby essay” to Grade 11</p><small>24 minutes ago</small></div></div><div class="activity-item"><div class="activity-icon pink">♧</div><div><strong>Student joined</strong><p>Jordan Williams joined Biology Lab · Grade 11</p><small>1 hour ago</small></div></div></div></article>
-          <article class="panel performance-panel"><div class="panel-heading"><div><h2>Class performance</h2><p>Average scores by subject</p></div><button class="select-button">This term <span>⌄</span></button></div><div class="performance-list"><div><span class="subject-mark math">M</span><strong>Mathematics</strong><b>88%</b><div class="progress"><i style="width:88%"></i></div></div><div><span class="subject-mark science">S</span><strong>Science</strong><b>84%</b><div class="progress"><i style="width:84%"></i></div></div><div><span class="subject-mark english">E</span><strong>English</strong><b>79%</b><div class="progress"><i style="width:79%"></i></div></div><div><span class="subject-mark history">H</span><strong>History</strong><b>76%</b><div class="progress"><i style="width:76%"></i></div></div></div></article>
-        </section>
-      </div>
+          <article class="metric-card metric-mint">
+            <div class="metric-top">
+              <span>Attendance</span>
+              <div class="metric-symbol">✓</div>
+            </div>
+            <strong>94.2%</strong>
+            <div class="metric-bottom">
+              <span class="positive">+2.1%</span>
+              <span>vs last week</span>
+            </div>
+          </article>
+
+          <article class="metric-card metric-yellow">
+            <div class="metric-top">
+              <span>Assignments</span>
+              <div class="metric-symbol">◇</div>
+            </div>
+            <strong id="statAssignments">7</strong>
+            <div class="metric-bottom">
+              <span class="warning">3 due soon</span>
+              <span>this week</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="dashboard-bento">
+
+          <section class="bento-panel schedule-panel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">TODAY</span>
+                <h2>Class schedule</h2>
+              </div>
+              <button class="panel-link" data-page-target="timetable">View timetable →</button>
+            </div>
+
+            <div class="schedule-list" id="scheduleList"></div>
+
+          </section>
+
+          <section class="bento-panel attendance-panel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">OVERVIEW</span>
+                <h2>Attendance</h2>
+              </div>
+              <span class="tiny-status">This month</span>
+            </div>
+
+            <div class="attendance-visual">
+
+              <div class="attendance-ring">
+                <div class="attendance-ring-inner">
+                  <strong>94%</strong>
+                  <span>overall</span>
+                </div>
+              </div>
+
+              <div class="attendance-breakdown">
+                <div>
+                  <span><i class="legend present"></i>Present</span>
+                  <strong>118</strong>
+                </div>
+                <div>
+                  <span><i class="legend absent"></i>Absent</span>
+                  <strong>6</strong>
+                </div>
+                <div>
+                  <span><i class="legend late"></i>Late</span>
+                  <strong>4</strong>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="wide-soft-button" data-page-target="attendance">
+              Open attendance
+            </button>
+
+          </section>
+
+          <section class="bento-panel assignments-panel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">WORKLOAD</span>
+                <h2>Assignments</h2>
+              </div>
+              <button class="panel-link" data-page-target="assignments">See all →</button>
+            </div>
+
+            <div id="dashboardAssignments" class="assignment-list"></div>
+
+          </section>
+
+          <section class="bento-panel activity-panel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">LIVE FEED</span>
+                <h2>Recent activity</h2>
+              </div>
+            </div>
+
+            <div id="activityList" class="activity-list"></div>
+
+          </section>
+
+          <section class="bento-panel announcement-panel">
+
+            <div class="panel-heading">
+              <div>
+                <span class="panel-kicker">NOTICE BOARD</span>
+                <h2>Announcements</h2>
+              </div>
+              <button class="panel-link" data-page-target="announcements">All notices →</button>
+            </div>
+
+            <div id="dashboardAnnouncements"></div>
+
+          </section>
+
+        </div>
+
+      </section>
+
+      <section class="page" id="page-classes">
+
+        <div class="page-intro">
+          <div>
+            <span class="eyebrow">ACADEMIC MANAGEMENT</span>
+            <h1>Your classes</h1>
+            <p>Organise subjects, teachers and classroom schedules.</p>
+          </div>
+
+          <button class="button button-dark" data-modal="classModal">
+            + Add class
+          </button>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-field">
+            <span>⌕</span>
+            <input id="classSearch" type="search" placeholder="Search classes...">
+          </div>
+
+          <select class="select-field" id="classStatus">
+            <option value="all">All status</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="upcoming">Upcoming</option>
+          </select>
+
+          <select class="select-field" id="classSort">
+            <option value="name">Sort by name</option>
+            <option value="time">Sort by time</option>
+            <option value="teacher">Sort by teacher</option>
+          </select>
+        </div>
+
+        <div class="class-grid" id="classGrid"></div>
+
+      </section>
+
+      <section class="page" id="page-students">
+
+        <div class="page-intro">
+          <div>
+            <span class="eyebrow">STUDENT DIRECTORY</span>
+            <h1>Students</h1>
+            <p>Manage your classroom members and monitor performance.</p>
+          </div>
+
+          <div class="intro-actions">
+            <button class="button button-light" id="exportStudents">Export CSV</button>
+            <button class="button button-dark" data-modal="studentModal">+ Add student</button>
+          </div>
+        </div>
+
+        <div class="student-summary">
+          <div>
+            <span>Total students</span>
+            <strong id="studentCount">10 students</strong>
+          </div>
+          <div>
+            <span>Average attendance</span>
+            <strong>91.8%</strong>
+          </div>
+          <div>
+            <span>Active students</span>
+            <strong>10</strong>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-field">
+            <span>⌕</span>
+            <input id="studentSearch" type="search" placeholder="Search students...">
+          </div>
+
+          <select class="select-field" id="studentStatus">
+            <option value="all">All students</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </div>
+
+        <div class="table-panel">
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Roll no.</th>
+                  <th>Class</th>
+                  <th>Attendance</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="page" id="page-attendance">
+
+        <div class="page-intro">
+          <div>
+            <span class="eyebrow">DAILY TRACKING</span>
+            <h1>Attendance</h1>
+            <p>Mark and review attendance for today's classes.</p>
+          </div>
+
+          <button class="button button-dark" id="saveAttendance">Save attendance</button>
+        </div>
+
+        <div class="attendance-controls">
+
+          <div class="date-control">
+            <span>Date</span>
+            <input type="date" id="attendanceDate" value="2026-09-14">
+          </div>
+
+          <select class="select-field" id="attendanceClass">
+            <option value="all">All classes</option>
+            <option value="MCA A">MCA A</option>
+            <option value="MCA B">MCA B</option>
+          </select>
+
+          <button class="button button-light" id="markAllPresent">Mark all present</button>
+
+        </div>
+
+        <div class="attendance-stat-grid">
+          <div class="attendance-stat">
+            <span>Present</span>
+            <strong id="presentCount">8</strong>
+          </div>
+
+          <div class="attendance-stat absent-stat">
+            <span>Absent</span>
+            <strong id="absentCount">2</strong>
+          </div>
+
+          <div class="attendance-stat rate-stat">
+            <span>Today's rate</span>
+            <strong id="attendanceRate">80%</strong>
+          </div>
+        </div>
+
+        <div class="table-panel">
+          <div class="table-scroll">
+            <table class="data-table attendance-table">
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Class</th>
+                  <th>Today's status</th>
+                  <th>Overall</th>
+                </tr>
+              </thead>
+              <tbody id="attendanceTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="page" id="page-assignments">
+
+        <div class="page-intro">
+          <div>
+            <span class="eyebrow">ACADEMIC WORK</span>
+            <h1>Assignments</h1>
+            <p>Create, track and review student assignments.</p>
+          </div>
+
+          <button class="button button-dark" data-modal="assignmentModal">
+            + New assignment
+          </button>
+        </div>
+
+        <div class="filter-bar">
+          <div class="search-field">
+            <span>⌕</span>
+            <input id="assignmentSearch" type="search" placeholder="Search assignments...">
+          </div>
+
+          <select class="select-field" id="assignmentFilter">
+            <option value="all">All assignments</option>
+            <option value="pending">Pending</option>
+            <option value="submitted">Submitted</option>
+          </select>
+        </div>
+
+        <div class="assignment-page-grid" id="assignmentGrid"></div>
+
+      </section>
+
+      <section class="page" id="page-timetable">
+
+        <div class="page-intro">
+          <div>
+            <span class="eyebrow">WEEKLY PLANNER</span>
+            <h1>Timetable</h1>
+            <p>A simple view of your teaching week.</p>
+          </div>
+        </div>
+
+        <div class="week-label">
+          <button class="round-button">‹</button>
+          <strong>14 — 19 September 2026</strong>
+          <button class="round-button">›</button>
+        </div>
+
+        <div class="timetable-shell">
+          <div class="timetable-grid" id="timetableBody"></div>
+        </div>
+
+      </section>
+
+      <section class="page" id="page-announcements">
+
+        <div class="page-intro">
+          <div>
+            <span class="eyebrow">COMMUNICATION</span>
+            <h1>Announcements</h1>
+            <p>Keep your students informed about important updates.</p>
+          </div>
+
+          <button class="button button-dark" data-modal="announcementModal">
+            + Publish notice
+          </button>
+        </div>
+
+        <div class="announcement-page-list" id="announcementList"></div>
+
+      </section>
+
+      <section class="page" id="page-settings">
+
+        <div class="page-intro">
+          <div>
+            <span class="eyebrow">PREFERENCES</span>
+            <h1>Settings</h1>
+            <p>Configure your classroom workspace.</p>
+          </div>
+        </div>
+
+        <div class="settings-layout">
+
+          <div class="settings-card-large">
+            <div class="settings-heading">
+              <div class="settings-icon">◉</div>
+              <div>
+                <h2>Workspace preferences</h2>
+                <p>Control how SmartClass behaves for you.</p>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <div>
+                <strong>Compact mode</strong>
+                <span>Reduce spacing throughout the dashboard.</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="compactMode">
+                <span></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div>
+                <strong>Notifications</strong>
+                <span>Receive classroom activity alerts.</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div>
+                <strong>Assignment reminders</strong>
+                <span>Show reminders for upcoming deadlines.</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="settings-card-large">
+            <div class="settings-heading">
+              <div class="settings-icon peach">⌁</div>
+              <div>
+                <h2>Classroom profile</h2>
+                <p>Basic information about your workspace.</p>
+              </div>
+            </div>
+
+            <div class="profile-preview">
+              <div class="profile-large-avatar">AM</div>
+              <div>
+                <strong>Class Coordinator</strong>
+                <span>SmartClass Administrator</span>
+              </div>
+            </div>
+
+            <button class="button button-light full-button">Edit profile</button>
+          </div>
+
+          <div class="settings-card-large danger-settings">
+            <div class="settings-heading">
+              <div class="settings-icon danger">↻</div>
+              <div>
+                <h2>Demo data</h2>
+                <p>Reset locally stored classroom data.</p>
+              </div>
+            </div>
+
+            <button class="button danger-button" id="resetData">Reset demo data</button>
+          </div>
+
+        </div>
+
+      </section>
+
     </main>
+
   </div>
 
-  <div class="toast" id="toast" role="status">Notifications are all caught up.</div>
-  <div class="modal-backdrop" id="modal-backdrop"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div class="modal-symbol">＋</div><h2 id="modal-title">Add a new class</h2><p>Set up your next class space in a few details.</p><label>Class name<input type="text" placeholder="e.g. Creative writing"></label><div class="modal-fields"><label>Grade<select><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option></select></label><label>Room<input type="text" placeholder="204"></label></div><button class="primary-button full-width" id="create-class">Create class <span>→</span></button></div></div>
+  <div class="modal" id="classModal">
+    <div class="modal-card">
+
+      <div class="modal-heading">
+        <div>
+          <span class="eyebrow">NEW RECORD</span>
+          <h2>Create class</h2>
+        </div>
+        <button class="modal-close">×</button>
+      </div>
+
+      <form id="classForm">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Class name</label>
+            <input name="name" required placeholder="e.g. Data Structures">
+          </div>
+
+          <div class="form-group">
+            <label>Course code</label>
+            <input name="code" required placeholder="e.g. MCA-DS-301">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Teacher</label>
+          <input name="teacher" required placeholder="Teacher name">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Room</label>
+            <input name="room" required placeholder="Room 204">
+          </div>
+
+          <div class="form-group">
+            <label>Start time</label>
+            <input name="time" type="time" required>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="button button-light modal-close">Cancel</button>
+          <button type="submit" class="button button-dark">Create class</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div class="modal" id="studentModal">
+    <div class="modal-card">
+
+      <div class="modal-heading">
+        <div>
+          <span class="eyebrow">NEW RECORD</span>
+          <h2>Add student</h2>
+        </div>
+        <button class="modal-close">×</button>
+      </div>
+
+      <form id="studentForm">
+
+        <div class="form-group">
+          <label>Student name</label>
+          <input name="name" required placeholder="Full name">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Roll number</label>
+            <input name="roll" required placeholder="MCA011">
+          </div>
+
+          <div class="form-group">
+            <label>Class</label>
+            <input name="class" value="MCA A">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input name="email" type="email" required placeholder="student@example.com">
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="button button-light modal-close">Cancel</button>
+          <button type="submit" class="button button-dark">Add student</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div class="modal" id="assignmentModal">
+    <div class="modal-card">
+
+      <div class="modal-heading">
+        <div>
+          <span class="eyebrow">NEW RECORD</span>
+          <h2>Create assignment</h2>
+        </div>
+        <button class="modal-close">×</button>
+      </div>
+
+      <form id="assignmentForm">
+
+        <div class="form-group">
+          <label>Assignment title</label>
+          <input name="title" required placeholder="Assignment title">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Subject</label>
+            <input name="subject" required placeholder="Subject">
+          </div>
+
+          <div class="form-group">
+            <label>Priority</label>
+            <select name="priority">
+              <option>Medium</option>
+              <option>High</option>
+              <option>Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Due date</label>
+          <input name="due" type="date" required>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="button button-light modal-close">Cancel</button>
+          <button type="submit" class="button button-dark">Create assignment</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div class="modal" id="announcementModal">
+    <div class="modal-card">
+
+      <div class="modal-heading">
+        <div>
+          <span class="eyebrow">NOTICE BOARD</span>
+          <h2>Publish announcement</h2>
+        </div>
+        <button class="modal-close">×</button>
+      </div>
+
+      <form id="announcementForm">
+
+        <div class="form-group">
+          <label>Title</label>
+          <input name="title" required placeholder="Announcement title">
+        </div>
+
+        <div class="form-group">
+          <label>Type</label>
+          <select name="type">
+            <option>Academic</option>
+            <option>Notice</option>
+            <option>Event</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="text" required placeholder="Write your announcement..."></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="button button-light modal-close">Cancel</button>
+          <button type="submit" class="button button-dark">Publish</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <span class="toast-mark">✓</span>
+    <span class="toast-text"></span>
+  </div>
+
   <script src="script.js"></script>
+
 </body>
 </html>
