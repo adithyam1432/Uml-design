@@ -163,3 +163,46 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
     }
   });
 });
+
+function updateDashboardHeading() {
+  const dateElement = document.getElementById("dashboardDate");
+  const greetingElement = document.getElementById("greetingTime");
+  const nameElement = document.getElementById("userName");
+
+  if (!dateElement || !greetingElement || !nameElement) return;
+
+  const now = new Date();
+
+  const dateText = now
+    .toLocaleDateString("en-US", {
+      weekday: "long",
+      day: "2-digit",
+      month: "long"
+    })
+    .toUpperCase()
+    .replace(",", " ·");
+
+  dateElement.textContent = dateText;
+
+  const hour = now.getHours();
+
+  let greeting = "morning";
+
+  if (hour >= 12 && hour < 17) {
+    greeting = "afternoon";
+  } else if (hour >= 17 && hour < 21) {
+    greeting = "evening";
+  } else if (hour >= 21 || hour < 5) {
+    greeting = "night";
+  }
+
+  greetingElement.textContent = greeting;
+
+  const savedName = localStorage.getItem("smartClassroomUserName");
+
+  nameElement.textContent = savedName || "User";
+}
+
+updateDashboardHeading();
+
+setInterval(updateDashboardHeading, 60000);
