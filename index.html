@@ -3,857 +3,1082 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Smart Classroom Management System">
-  <meta name="theme-color" content="#f3eee7">
-  <title>SmartClass — Classroom Management</title>
+  <meta name="description" content="SmartClass - Modern classroom management for schools, teachers and students.">
+  <title>SmartClass — Smarter Classroom Management</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <div class="app-shell">
+<div class="page-noise"></div>
 
-    <aside class="sidebar" id="sidebar">
+<header class="header">
+  <div class="header-inner">
 
-      <div class="brand">
-        <div class="brand-symbol">
+    <a href="#home" class="logo">
+      <span class="logo-box">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span>SmartClass</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#features">Features</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#workflow">How it works</a>
+      <a href="#why">Why SmartClass</a>
+      <a href="#contact" class="nav-button">Get started <span>↗</span></a>
+    </nav>
+
+    <button class="menu-button" id="menuButton" aria-label="Open navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+  <div class="hero-background">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="hero-content">
+
+    <div class="hero-label">
+      <span class="pulse"></span>
+      SMART CLASSROOM MANAGEMENT
+    </div>
+
+    <h1>
+      Your classroom,
+      <span>finally in sync.</span>
+    </h1>
+
+    <p class="hero-description">
+      One beautifully simple workspace for classes, students,
+      attendance, assignments, schedules and announcements.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#features" class="primary-button">
+        Explore SmartClass
+        <span>→</span>
+      </a>
+
+      <a href="#workflow" class="secondary-link">
+        See how it works
+        <span>↘</span>
+      </a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-avatars">
+        <span>PS</span>
+        <span>AR</span>
+        <span>DK</span>
+        <span>RM</span>
+      </div>
+
+      <div>
+        <strong>Built for modern classrooms</strong>
+        <small>Teachers · Students · Schools</small>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-dashboard">
+
+    <div class="dashboard-glow"></div>
+
+    <div class="dashboard-window">
+
+      <div class="window-top">
+        <div class="window-dots">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+
+        <div class="window-address">
+          smartclass / dashboard
+        </div>
+
+        <div class="window-user">
+          AM
+        </div>
+      </div>
+
+      <div class="dashboard-body">
+
+        <aside class="mini-sidebar">
+
+          <div class="mini-brand">
+            <span>SC</span>
+          </div>
+
+          <div class="mini-nav active">⌂</div>
+          <div class="mini-nav">▦</div>
+          <div class="mini-nav">♙</div>
+          <div class="mini-nav">✓</div>
+          <div class="mini-nav">▤</div>
+          <div class="mini-nav">◷</div>
+
+          <div class="mini-nav bottom">⚙</div>
+
+        </aside>
+
+        <div class="dashboard-main">
+
+          <div class="dashboard-heading">
+            <div>
+              <small>MONDAY · 14 SEPTEMBER</small>
+              <h3>Good morning, Adithya <span>✦</span></h3>
+            </div>
+
+            <div class="dashboard-search">
+              ⌕ Search
+            </div>
+          </div>
+
+          <div class="dashboard-stats">
+
+            <div class="dash-stat stat-purple">
+              <div class="stat-symbol">▦</div>
+              <small>Active classes</small>
+              <strong>06</strong>
+              <span>+2 this month</span>
+            </div>
+
+            <div class="dash-stat stat-peach">
+              <div class="stat-symbol">♙</div>
+              <small>Students</small>
+              <strong>124</strong>
+              <span>96% active</span>
+            </div>
+
+            <div class="dash-stat stat-mint">
+              <div class="stat-symbol">✓</div>
+              <small>Attendance</small>
+              <strong>92%</strong>
+              <span>+4.2% this week</span>
+            </div>
+
+          </div>
+
+          <div class="dashboard-columns">
+
+            <div class="schedule-panel">
+
+              <div class="panel-title">
+                <div>
+                  <small>TODAY</small>
+                  <strong>Class schedule</strong>
+                </div>
+                <span>View all →</span>
+              </div>
+
+              <div class="schedule-item current">
+                <div class="time">
+                  <strong>09:00</strong>
+                  <small>AM</small>
+                </div>
+
+                <div class="schedule-line">
+                  <i></i>
+                </div>
+
+                <div class="schedule-info">
+                  <strong>Data Structures</strong>
+                  <span>Dr. Priya Sharma · Lab 2</span>
+                </div>
+
+                <b>NOW</b>
+              </div>
+
+              <div class="schedule-item">
+                <div class="time">
+                  <strong>10:30</strong>
+                  <small>AM</small>
+                </div>
+
+                <div class="schedule-line">
+                  <i></i>
+                </div>
+
+                <div class="schedule-info">
+                  <strong>Web Technologies</strong>
+                  <span>Prof. Arjun Rao · Room 204</span>
+                </div>
+              </div>
+
+              <div class="schedule-item">
+                <div class="time">
+                  <strong>12:00</strong>
+                  <small>PM</small>
+                </div>
+
+                <div class="schedule-line">
+                  <i></i>
+                </div>
+
+                <div class="schedule-info">
+                  <strong>Cloud Computing</strong>
+                  <span>Dr. Neha Kulkarni · Room 108</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="activity-panel">
+
+              <div class="panel-title">
+                <div>
+                  <small>OVERVIEW</small>
+                  <strong>Activity</strong>
+                </div>
+                <span>•••</span>
+              </div>
+
+              <div class="activity-chart">
+                <div class="chart-grid">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <svg viewBox="0 0 300 120" preserveAspectRatio="none">
+                  <path d="M0 91 C25 80 30 86 50 67 S82 82 105 57 S138 63 160 48 S195 59 215 34 S252 42 275 20 S293 28 300 13" />
+                </svg>
+
+                <div class="chart-label">
+                  <span>MON</span>
+                  <span>TUE</span>
+                  <span>WED</span>
+                  <span>THU</span>
+                  <span>FRI</span>
+                </div>
+              </div>
+
+              <div class="activity-bottom">
+                <div>
+                  <small>Weekly attendance</small>
+                  <strong>92.4%</strong>
+                </div>
+
+                <span class="positive">+8.4%</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="floating-card floating-attendance">
+      <div class="float-icon green">✓</div>
+      <div>
+        <small>Attendance marked</small>
+        <strong>118 Present</strong>
+      </div>
+      <span>09:05</span>
+    </div>
+
+    <div class="floating-card floating-assignment">
+      <div class="float-icon purple">▤</div>
+      <div>
+        <small>Assignment due</small>
+        <strong>Binary Search Tree</strong>
+      </div>
+      <b>2d</b>
+    </div>
+
+    <div class="floating-card floating-student">
+      <div class="student-avatar">DP</div>
+      <div>
+        <small>Top performer</small>
+        <strong>Diya Patil</strong>
+      </div>
+      <span>97%</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="marquee-section">
+  <div class="marquee">
+    <span>CLASSROOM MANAGEMENT</span>
+    <i>✦</i>
+    <span>SMART ATTENDANCE</span>
+    <i>✦</i>
+    <span>ASSIGNMENTS</span>
+    <i>✦</i>
+    <span>STUDENT MANAGEMENT</span>
+    <i>✦</i>
+    <span>CLASSROOM MANAGEMENT</span>
+    <i>✦</i>
+    <span>SMART ATTENDANCE</span>
+  </div>
+</section>
+
+<section class="intro-section section" id="why">
+
+  <div class="section-number">01</div>
+
+  <div class="intro-heading reveal">
+    <span class="eyebrow">THE SMARTER WAY</span>
+
+    <h2>
+      Stop managing
+      <span>the chaos.</span>
+    </h2>
+  </div>
+
+  <div class="intro-copy reveal">
+    <p>
+      Classroom administration should not feel like a second job.
+      SmartClass brings the important pieces together so teachers
+      can focus on teaching and students can focus on learning.
+    </p>
+
+    <a href="#solutions" class="arrow-link">
+      Discover SmartClass
+      <span>↗</span>
+    </a>
+  </div>
+
+</section>
+
+<section class="features section" id="features">
+
+  <div class="section-header reveal">
+
+    <div>
+      <span class="eyebrow">02 · PLATFORM</span>
+
+      <h2>
+        Everything connected.
+        <span>Nothing complicated.</span>
+      </h2>
+    </div>
+
+    <p>
+      A focused set of tools designed around the everyday
+      rhythm of a classroom.
+    </p>
+
+  </div>
+
+  <div class="feature-bento">
+
+    <article class="feature feature-large feature-purple reveal">
+
+      <div class="feature-top">
+        <span class="feature-number">01</span>
+        <span class="feature-icon">✓</span>
+      </div>
+
+      <div class="attendance-visual">
+
+        <div class="attendance-ring">
+          <div>
+            <strong>92</strong>
+            <small>%</small>
+          </div>
+        </div>
+
+        <div class="attendance-bars">
+          <span style="height:52%"></span>
+          <span style="height:75%"></span>
+          <span style="height:62%"></span>
+          <span style="height:91%"></span>
+          <span style="height:80%"></span>
+          <span style="height:95%"></span>
+          <span style="height:87%"></span>
+        </div>
+
+      </div>
+
+      <div class="feature-content">
+        <h3>Smart Attendance</h3>
+        <p>
+          Know who is present, who is absent and how your
+          classroom is performing at a glance.
+        </p>
+      </div>
+
+      <span class="feature-arrow">↗</span>
+
+    </article>
+
+    <article class="feature feature-student feature-peach reveal">
+
+      <div class="feature-top">
+        <span class="feature-number">02</span>
+        <span class="feature-icon">♙</span>
+      </div>
+
+      <div class="student-stack">
+        <div class="student-row">
+          <span>AS</span>
+          <div>
+            <strong>Aarav Sharma</strong>
+            <small>MCA001</small>
+          </div>
+          <b>96%</b>
+        </div>
+
+        <div class="student-row">
+          <span>AP</span>
+          <div>
+            <strong>Ananya Rao</strong>
+            <small>MCA002</small>
+          </div>
+          <b>92%</b>
+        </div>
+
+        <div class="student-row">
+          <span>DP</span>
+          <div>
+            <strong>Diya Patil</strong>
+            <small>MCA004</small>
+          </div>
+          <b>97%</b>
+        </div>
+      </div>
+
+      <div class="feature-content">
+        <h3>Student Management</h3>
+        <p>Keep every student organized and accessible.</p>
+      </div>
+
+      <span class="feature-arrow">↗</span>
+
+    </article>
+
+    <article class="feature feature-assignment feature-mint reveal">
+
+      <div class="feature-top">
+        <span class="feature-number">03</span>
+        <span class="feature-icon">▤</span>
+      </div>
+
+      <div class="assignment-visual">
+
+        <div class="assignment-header">
+          <span>COURSEWORK</span>
+          <b>4 tasks</b>
+        </div>
+
+        <div class="task">
+          <i class="done"></i>
+          <span>Binary Search Tree</span>
+          <b>High</b>
+        </div>
+
+        <div class="task">
+          <i></i>
+          <span>Portfolio Website</span>
+          <b>Med</b>
+        </div>
+
+        <div class="task">
+          <i></i>
+          <span>AWS Case Study</span>
+          <b>Low</b>
+        </div>
+
+      </div>
+
+      <div class="feature-content">
+        <h3>Assignments</h3>
+        <p>Create, track and manage coursework effortlessly.</p>
+      </div>
+
+      <span class="feature-arrow">↗</span>
+
+    </article>
+
+    <article class="feature feature-schedule feature-blue reveal">
+
+      <div class="feature-top">
+        <span class="feature-number">04</span>
+        <span class="feature-icon">◷</span>
+      </div>
+
+      <div class="calendar-visual">
+
+        <div class="calendar-days">
+          <span>M</span>
+          <span>T</span>
+          <span>W</span>
+          <span>T</span>
+          <span>F</span>
+        </div>
+
+        <div class="calendar-row">
+          <span></span>
+          <b></b>
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div>
-          <strong>SmartClass</strong>
-          <small>CLASSROOM OS</small>
+
+        <div class="calendar-row">
+          <span></span>
+          <span></span>
+          <b></b>
+          <span></span>
+          <span></span>
         </div>
+
+        <div class="calendar-row">
+          <span></span>
+          <span></span>
+          <span></span>
+          <b></b>
+          <span></span>
+        </div>
+
       </div>
 
-      <div class="sidebar-section">
-        <span class="sidebar-label">Workspace</span>
-
-        <nav class="nav-menu">
-          <button class="nav-link active" data-page="dashboard">
-            <span class="nav-icon">⌂</span>
-            <span>Dashboard</span>
-          </button>
-
-          <button class="nav-link" data-page="classes">
-            <span class="nav-icon">▦</span>
-            <span>Classes</span>
-          </button>
-
-          <button class="nav-link" data-page="students">
-            <span class="nav-icon">♙</span>
-            <span>Students</span>
-          </button>
-
-          <button class="nav-link" data-page="attendance">
-            <span class="nav-icon">✓</span>
-            <span>Attendance</span>
-          </button>
-
-          <button class="nav-link" data-page="assignments">
-            <span class="nav-icon">◇</span>
-            <span>Assignments</span>
-          </button>
-
-          <button class="nav-link" data-page="timetable">
-            <span class="nav-icon">◫</span>
-            <span>Timetable</span>
-          </button>
-
-          <button class="nav-link" data-page="announcements">
-            <span class="nav-icon">◉</span>
-            <span>Announcements</span>
-          </button>
-        </nav>
+      <div class="feature-content">
+        <h3>Timetable</h3>
+        <p>Make schedules clear for everyone.</p>
       </div>
 
-      <div class="sidebar-section">
-        <span class="sidebar-label">System</span>
+      <span class="feature-arrow">↗</span>
 
-        <nav class="nav-menu">
-          <button class="nav-link" data-page="settings">
-            <span class="nav-icon">⚙</span>
-            <span>Settings</span>
-          </button>
-        </nav>
+    </article>
+
+    <article class="feature feature-announcement feature-yellow reveal">
+
+      <div class="feature-top">
+        <span class="feature-number">05</span>
+        <span class="feature-icon">!</span>
       </div>
 
-      <div class="sidebar-footer">
-        <div class="mini-profile">
-          <div class="profile-avatar">AM</div>
-          <div>
-            <strong>Admin</strong>
-            <span>Class coordinator</span>
-          </div>
-          <button class="mini-more">•••</button>
-        </div>
+      <div class="announcement-visual">
+        <span>NEW</span>
+        <strong>Internal Assessment Schedule</strong>
+        <small>Important academic update</small>
       </div>
 
-    </aside>
+      <div class="feature-content">
+        <h3>Announcements</h3>
+        <p>Keep your classroom informed.</p>
+      </div>
 
-    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+      <span class="feature-arrow">↗</span>
 
-    <main class="main">
-
-      <header class="topbar">
-
-        <div class="mobile-brand">
-          <button class="menu-button" id="menuButton">☰</button>
-          <strong>SmartClass</strong>
-        </div>
-
-        <div class="topbar-title">
-          <span>Academic workspace</span>
-          <strong id="pageTitle">Dashboard</strong>
-        </div>
-
-        <div class="topbar-actions">
-
-          <div class="global-search">
-            <span>⌕</span>
-            <input type="search" id="globalSearch" placeholder="Search anything...">
-            <kbd>⌘ K</kbd>
-          </div>
-
-          <button class="round-button" id="notificationButton">
-            ♢
-            <i></i>
-          </button>
-
-          <div class="top-avatar">AM</div>
-
-        </div>
-
-      </header>
-
-      <section class="page active" id="page-dashboard">
-
-        <div class="dashboard-hero">
-
-          <div class="hero-content">
-            <div class="eyebrow">
-              <span class="eyebrow-dot"></span>
-              Monday · 14 September 2026
-            </div>
-
-            <h1>
-              Good morning,<br>
-              <em>Admin.</em>
-            </h1>
-
-            <p>
-              Your classroom is ready. Here's what needs your attention today.
-            </p>
-
-            <div class="hero-actions">
-              <button class="button button-dark" data-modal="classModal">
-                + Create class
-              </button>
-
-              <button class="button button-light" data-page-target="attendance">
-                Take attendance
-              </button>
-            </div>
-          </div>
-
-          <div class="hero-illustration">
-            <div class="hero-orbit orbit-one"></div>
-            <div class="hero-orbit orbit-two"></div>
-            <div class="hero-book">
-              <div class="book-line"></div>
-              <div class="book-line short"></div>
-              <div class="book-line"></div>
-              <div class="book-line medium"></div>
-            </div>
-            <div class="hero-star">✦</div>
-            <div class="hero-dot dot-one"></div>
-            <div class="hero-dot dot-two"></div>
-          </div>
-
-        </div>
-
-        <div class="metric-grid">
-
-          <article class="metric-card metric-lavender">
-            <div class="metric-top">
-              <span>Students</span>
-              <div class="metric-symbol">♙</div>
-            </div>
-            <strong id="statStudents">124</strong>
-            <div class="metric-bottom">
-              <span class="positive">+8.4%</span>
-              <span>this semester</span>
-            </div>
-          </article>
-
-          <article class="metric-card metric-peach">
-            <div class="metric-top">
-              <span>Classes</span>
-              <div class="metric-symbol">▦</div>
-            </div>
-            <strong id="statClasses">12</strong>
-            <div class="metric-bottom">
-              <span>Today</span>
-              <span>4 scheduled</span>
-            </div>
-          </article>
-
-          <article class="metric-card metric-mint">
-            <div class="metric-top">
-              <span>Attendance</span>
-              <div class="metric-symbol">✓</div>
-            </div>
-            <strong>94.2%</strong>
-            <div class="metric-bottom">
-              <span class="positive">+2.1%</span>
-              <span>vs last week</span>
-            </div>
-          </article>
-
-          <article class="metric-card metric-yellow">
-            <div class="metric-top">
-              <span>Assignments</span>
-              <div class="metric-symbol">◇</div>
-            </div>
-            <strong id="statAssignments">7</strong>
-            <div class="metric-bottom">
-              <span class="warning">3 due soon</span>
-              <span>this week</span>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="dashboard-bento">
-
-          <section class="bento-panel schedule-panel">
-
-            <div class="panel-heading">
-              <div>
-                <span class="panel-kicker">TODAY</span>
-                <h2>Class schedule</h2>
-              </div>
-              <button class="panel-link" data-page-target="timetable">View timetable →</button>
-            </div>
-
-            <div class="schedule-list" id="scheduleList"></div>
-
-          </section>
-
-          <section class="bento-panel attendance-panel">
-
-            <div class="panel-heading">
-              <div>
-                <span class="panel-kicker">OVERVIEW</span>
-                <h2>Attendance</h2>
-              </div>
-              <span class="tiny-status">This month</span>
-            </div>
-
-            <div class="attendance-visual">
-
-              <div class="attendance-ring">
-                <div class="attendance-ring-inner">
-                  <strong>94%</strong>
-                  <span>overall</span>
-                </div>
-              </div>
-
-              <div class="attendance-breakdown">
-                <div>
-                  <span><i class="legend present"></i>Present</span>
-                  <strong>118</strong>
-                </div>
-                <div>
-                  <span><i class="legend absent"></i>Absent</span>
-                  <strong>6</strong>
-                </div>
-                <div>
-                  <span><i class="legend late"></i>Late</span>
-                  <strong>4</strong>
-                </div>
-              </div>
-
-            </div>
-
-            <button class="wide-soft-button" data-page-target="attendance">
-              Open attendance
-            </button>
-
-          </section>
-
-          <section class="bento-panel assignments-panel">
-
-            <div class="panel-heading">
-              <div>
-                <span class="panel-kicker">WORKLOAD</span>
-                <h2>Assignments</h2>
-              </div>
-              <button class="panel-link" data-page-target="assignments">See all →</button>
-            </div>
-
-            <div id="dashboardAssignments" class="assignment-list"></div>
-
-          </section>
-
-          <section class="bento-panel activity-panel">
-
-            <div class="panel-heading">
-              <div>
-                <span class="panel-kicker">LIVE FEED</span>
-                <h2>Recent activity</h2>
-              </div>
-            </div>
-
-            <div id="activityList" class="activity-list"></div>
-
-          </section>
-
-          <section class="bento-panel announcement-panel">
-
-            <div class="panel-heading">
-              <div>
-                <span class="panel-kicker">NOTICE BOARD</span>
-                <h2>Announcements</h2>
-              </div>
-              <button class="panel-link" data-page-target="announcements">All notices →</button>
-            </div>
-
-            <div id="dashboardAnnouncements"></div>
-
-          </section>
-
-        </div>
-
-      </section>
-
-      <section class="page" id="page-classes">
-
-        <div class="page-intro">
-          <div>
-            <span class="eyebrow">ACADEMIC MANAGEMENT</span>
-            <h1>Your classes</h1>
-            <p>Organise subjects, teachers and classroom schedules.</p>
-          </div>
-
-          <button class="button button-dark" data-modal="classModal">
-            + Add class
-          </button>
-        </div>
-
-        <div class="filter-bar">
-          <div class="search-field">
-            <span>⌕</span>
-            <input id="classSearch" type="search" placeholder="Search classes...">
-          </div>
-
-          <select class="select-field" id="classStatus">
-            <option value="all">All status</option>
-            <option value="ongoing">Ongoing</option>
-            <option value="upcoming">Upcoming</option>
-          </select>
-
-          <select class="select-field" id="classSort">
-            <option value="name">Sort by name</option>
-            <option value="time">Sort by time</option>
-            <option value="teacher">Sort by teacher</option>
-          </select>
-        </div>
-
-        <div class="class-grid" id="classGrid"></div>
-
-      </section>
-
-      <section class="page" id="page-students">
-
-        <div class="page-intro">
-          <div>
-            <span class="eyebrow">STUDENT DIRECTORY</span>
-            <h1>Students</h1>
-            <p>Manage your classroom members and monitor performance.</p>
-          </div>
-
-          <div class="intro-actions">
-            <button class="button button-light" id="exportStudents">Export CSV</button>
-            <button class="button button-dark" data-modal="studentModal">+ Add student</button>
-          </div>
-        </div>
-
-        <div class="student-summary">
-          <div>
-            <span>Total students</span>
-            <strong id="studentCount">10 students</strong>
-          </div>
-          <div>
-            <span>Average attendance</span>
-            <strong>91.8%</strong>
-          </div>
-          <div>
-            <span>Active students</span>
-            <strong>10</strong>
-          </div>
-        </div>
-
-        <div class="filter-bar">
-          <div class="search-field">
-            <span>⌕</span>
-            <input id="studentSearch" type="search" placeholder="Search students...">
-          </div>
-
-          <select class="select-field" id="studentStatus">
-            <option value="all">All students</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-          </select>
-        </div>
-
-        <div class="table-panel">
-          <div class="table-scroll">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Student</th>
-                  <th>Roll no.</th>
-                  <th>Class</th>
-                  <th>Attendance</th>
-                  <th>Status</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="studentTableBody"></tbody>
-            </table>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="page" id="page-attendance">
-
-        <div class="page-intro">
-          <div>
-            <span class="eyebrow">DAILY TRACKING</span>
-            <h1>Attendance</h1>
-            <p>Mark and review attendance for today's classes.</p>
-          </div>
-
-          <button class="button button-dark" id="saveAttendance">Save attendance</button>
-        </div>
-
-        <div class="attendance-controls">
-
-          <div class="date-control">
-            <span>Date</span>
-            <input type="date" id="attendanceDate" value="2026-09-14">
-          </div>
-
-          <select class="select-field" id="attendanceClass">
-            <option value="all">All classes</option>
-            <option value="MCA A">MCA A</option>
-            <option value="MCA B">MCA B</option>
-          </select>
-
-          <button class="button button-light" id="markAllPresent">Mark all present</button>
-
-        </div>
-
-        <div class="attendance-stat-grid">
-          <div class="attendance-stat">
-            <span>Present</span>
-            <strong id="presentCount">8</strong>
-          </div>
-
-          <div class="attendance-stat absent-stat">
-            <span>Absent</span>
-            <strong id="absentCount">2</strong>
-          </div>
-
-          <div class="attendance-stat rate-stat">
-            <span>Today's rate</span>
-            <strong id="attendanceRate">80%</strong>
-          </div>
-        </div>
-
-        <div class="table-panel">
-          <div class="table-scroll">
-            <table class="data-table attendance-table">
-              <thead>
-                <tr>
-                  <th>Student</th>
-                  <th>Class</th>
-                  <th>Today's status</th>
-                  <th>Overall</th>
-                </tr>
-              </thead>
-              <tbody id="attendanceTableBody"></tbody>
-            </table>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="page" id="page-assignments">
-
-        <div class="page-intro">
-          <div>
-            <span class="eyebrow">ACADEMIC WORK</span>
-            <h1>Assignments</h1>
-            <p>Create, track and review student assignments.</p>
-          </div>
-
-          <button class="button button-dark" data-modal="assignmentModal">
-            + New assignment
-          </button>
-        </div>
-
-        <div class="filter-bar">
-          <div class="search-field">
-            <span>⌕</span>
-            <input id="assignmentSearch" type="search" placeholder="Search assignments...">
-          </div>
-
-          <select class="select-field" id="assignmentFilter">
-            <option value="all">All assignments</option>
-            <option value="pending">Pending</option>
-            <option value="submitted">Submitted</option>
-          </select>
-        </div>
-
-        <div class="assignment-page-grid" id="assignmentGrid"></div>
-
-      </section>
-
-      <section class="page" id="page-timetable">
-
-        <div class="page-intro">
-          <div>
-            <span class="eyebrow">WEEKLY PLANNER</span>
-            <h1>Timetable</h1>
-            <p>A simple view of your teaching week.</p>
-          </div>
-        </div>
-
-        <div class="week-label">
-          <button class="round-button">‹</button>
-          <strong>14 — 19 September 2026</strong>
-          <button class="round-button">›</button>
-        </div>
-
-        <div class="timetable-shell">
-          <div class="timetable-grid" id="timetableBody"></div>
-        </div>
-
-      </section>
-
-      <section class="page" id="page-announcements">
-
-        <div class="page-intro">
-          <div>
-            <span class="eyebrow">COMMUNICATION</span>
-            <h1>Announcements</h1>
-            <p>Keep your students informed about important updates.</p>
-          </div>
-
-          <button class="button button-dark" data-modal="announcementModal">
-            + Publish notice
-          </button>
-        </div>
-
-        <div class="announcement-page-list" id="announcementList"></div>
-
-      </section>
-
-      <section class="page" id="page-settings">
-
-        <div class="page-intro">
-          <div>
-            <span class="eyebrow">PREFERENCES</span>
-            <h1>Settings</h1>
-            <p>Configure your classroom workspace.</p>
-          </div>
-        </div>
-
-        <div class="settings-layout">
-
-          <div class="settings-card-large">
-            <div class="settings-heading">
-              <div class="settings-icon">◉</div>
-              <div>
-                <h2>Workspace preferences</h2>
-                <p>Control how SmartClass behaves for you.</p>
-              </div>
-            </div>
-
-            <div class="setting-item">
-              <div>
-                <strong>Compact mode</strong>
-                <span>Reduce spacing throughout the dashboard.</span>
-              </div>
-              <label class="switch">
-                <input type="checkbox" id="compactMode">
-                <span></span>
-              </label>
-            </div>
-
-            <div class="setting-item">
-              <div>
-                <strong>Notifications</strong>
-                <span>Receive classroom activity alerts.</span>
-              </div>
-              <label class="switch">
-                <input type="checkbox" checked>
-                <span></span>
-              </label>
-            </div>
-
-            <div class="setting-item">
-              <div>
-                <strong>Assignment reminders</strong>
-                <span>Show reminders for upcoming deadlines.</span>
-              </div>
-              <label class="switch">
-                <input type="checkbox" checked>
-                <span></span>
-              </label>
-            </div>
-          </div>
-
-          <div class="settings-card-large">
-            <div class="settings-heading">
-              <div class="settings-icon peach">⌁</div>
-              <div>
-                <h2>Classroom profile</h2>
-                <p>Basic information about your workspace.</p>
-              </div>
-            </div>
-
-            <div class="profile-preview">
-              <div class="profile-large-avatar">AM</div>
-              <div>
-                <strong>Class Coordinator</strong>
-                <span>SmartClass Administrator</span>
-              </div>
-            </div>
-
-            <button class="button button-light full-button">Edit profile</button>
-          </div>
-
-          <div class="settings-card-large danger-settings">
-            <div class="settings-heading">
-              <div class="settings-icon danger">↻</div>
-              <div>
-                <h2>Demo data</h2>
-                <p>Reset locally stored classroom data.</p>
-              </div>
-            </div>
-
-            <button class="button danger-button" id="resetData">Reset demo data</button>
-          </div>
-
-        </div>
-
-      </section>
-
-    </main>
+    </article>
 
   </div>
 
-  <div class="modal" id="classModal">
-    <div class="modal-card">
+</section>
 
-      <div class="modal-heading">
-        <div>
-          <span class="eyebrow">NEW RECORD</span>
-          <h2>Create class</h2>
-        </div>
-        <button class="modal-close">×</button>
+<section class="solutions section" id="solutions">
+
+  <div class="section-header reveal">
+
+    <div>
+      <span class="eyebrow">03 · SOLUTIONS</span>
+
+      <h2>
+        One platform.
+        <span>Three perspectives.</span>
+      </h2>
+    </div>
+
+    <p>
+      SmartClass adapts to the people who make
+      education happen every day.
+    </p>
+
+  </div>
+
+  <div class="solution-cards">
+
+    <article class="solution-card solution-school reveal">
+
+      <div class="solution-number">01</div>
+
+      <div class="solution-symbol">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-      <form id="classForm">
+      <span class="eyebrow">FOR SCHOOLS</span>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Class name</label>
-            <input name="name" required placeholder="e.g. Data Structures">
-          </div>
+      <h3>A clearer view of your classrooms.</h3>
 
-          <div class="form-group">
-            <label>Course code</label>
-            <input name="code" required placeholder="e.g. MCA-DS-301">
-          </div>
+      <p>
+        Centralize classroom information and keep
+        academic activities coordinated.
+      </p>
+
+      <div class="solution-list">
+        <span>Centralized data</span>
+        <span>Academic coordination</span>
+        <span>Simple reporting</span>
+      </div>
+
+      <a href="#contact">Explore for schools <span>→</span></a>
+
+    </article>
+
+    <article class="solution-card solution-teacher reveal">
+
+      <div class="solution-number">02</div>
+
+      <div class="teacher-visual">
+        <div class="teacher-board">
+          <span>09:00</span>
+          <strong>Data Structures</strong>
+          <small>Lab 2 · 42 students</small>
         </div>
 
-        <div class="form-group">
-          <label>Teacher</label>
-          <input name="teacher" required placeholder="Teacher name">
+        <div class="teacher-check">✓</div>
+      </div>
+
+      <span class="eyebrow">FOR TEACHERS</span>
+
+      <h3>Spend less time managing.</h3>
+
+      <p>
+        Handle attendance, assignments and schedules
+        from one focused workspace.
+      </p>
+
+      <div class="solution-list">
+        <span>Quick attendance</span>
+        <span>Assignment tracking</span>
+        <span>Class scheduling</span>
+      </div>
+
+      <a href="#contact">Explore for teachers <span>→</span></a>
+
+    </article>
+
+    <article class="solution-card solution-student reveal">
+
+      <div class="solution-number">03</div>
+
+      <div class="student-dashboard">
+
+        <div class="student-head">
+          <span>MY CLASSROOM</span>
+          <b>92%</b>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>Room</label>
-            <input name="room" required placeholder="Room 204">
+        <div class="student-progress">
+          <span></span>
+        </div>
+
+        <div class="student-task">
+          <span>▤</span>
+          <div>
+            <strong>Portfolio Website</strong>
+            <small>Due Sep 18</small>
           </div>
-
-          <div class="form-group">
-            <label>Start time</label>
-            <input name="time" type="time" required>
-          </div>
+          <b>→</b>
         </div>
 
-        <div class="modal-actions">
-          <button type="button" class="button button-light modal-close">Cancel</button>
-          <button type="submit" class="button button-dark">Create class</button>
+      </div>
+
+      <span class="eyebrow">FOR STUDENTS</span>
+
+      <h3>Know what matters next.</h3>
+
+      <p>
+        Stay updated with assignments, classes and
+        important classroom announcements.
+      </p>
+
+      <div class="solution-list">
+        <span>Track assignments</span>
+        <span>View schedules</span>
+        <span>Stay updated</span>
+      </div>
+
+      <a href="#contact">Explore for students <span>→</span></a>
+
+    </article>
+
+  </div>
+
+</section>
+
+<section class="workflow section" id="workflow">
+
+  <div class="workflow-heading reveal">
+
+    <span class="eyebrow">04 · WORKFLOW</span>
+
+    <h2>
+      Simple enough
+      <span>to actually use.</span>
+    </h2>
+
+    <p>
+      SmartClass follows the natural rhythm of classroom
+      management instead of forcing another complicated system.
+    </p>
+
+  </div>
+
+  <div class="workflow-line">
+
+    <article class="workflow-step reveal">
+      <div class="step-number">01</div>
+
+      <div class="step-icon">+</div>
+
+      <h3>Organize</h3>
+
+      <p>
+        Set up classes, students, subjects and schedules.
+      </p>
+    </article>
+
+    <div class="workflow-connector"></div>
+
+    <article class="workflow-step reveal">
+      <div class="step-number">02</div>
+
+      <div class="step-icon">✓</div>
+
+      <h3>Track</h3>
+
+      <p>
+        Manage attendance, coursework and classroom activity.
+      </p>
+    </article>
+
+    <div class="workflow-connector"></div>
+
+    <article class="workflow-step reveal">
+      <div class="step-number">03</div>
+
+      <div class="step-icon">↗</div>
+
+      <h3>Improve</h3>
+
+      <p>
+        Turn organized classroom information into better decisions.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="numbers section">
+
+  <div class="numbers-heading reveal">
+    <span class="eyebrow">05 · THE DIFFERENCE</span>
+
+    <h2>
+      Less admin.
+      <span>More learning.</span>
+    </h2>
+  </div>
+
+  <div class="number-grid">
+
+    <div class="number-card reveal">
+      <span>01</span>
+      <strong data-number="92">0</strong>
+      <small>Average attendance</small>
+    </div>
+
+    <div class="number-card reveal">
+      <span>02</span>
+      <strong data-number="124">0</strong>
+      <small>Students managed</small>
+    </div>
+
+    <div class="number-card reveal">
+      <span>03</span>
+      <strong data-number="6">0</strong>
+      <small>Active classes</small>
+    </div>
+
+    <div class="number-card reveal">
+      <span>04</span>
+      <strong data-number="24">0</strong>
+      <small>Hours saved monthly</small>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="experience section">
+
+  <div class="experience-panel reveal">
+
+    <div class="experience-copy">
+
+      <span class="eyebrow">06 · DESIGNED AROUND PEOPLE</span>
+
+      <h2>
+        Technology should
+        <span>disappear into the experience.</span>
+      </h2>
+
+      <p>
+        Every interaction is designed to feel clear,
+        lightweight and familiar — whether you're managing
+        a classroom or checking tomorrow's assignment.
+      </p>
+
+      <div class="experience-points">
+
+        <div>
+          <span>01</span>
+          <strong>Less clicking</strong>
         </div>
 
-      </form>
+        <div>
+          <span>02</span>
+          <strong>Clear information</strong>
+        </div>
+
+        <div>
+          <span>03</span>
+          <strong>Faster decisions</strong>
+        </div>
+
+      </div>
 
     </div>
-  </div>
 
-  <div class="modal" id="studentModal">
-    <div class="modal-card">
+    <div class="experience-art">
 
-      <div class="modal-heading">
-        <div>
-          <span class="eyebrow">NEW RECORD</span>
-          <h2>Add student</h2>
+      <div class="art-circle circle-one"></div>
+      <div class="art-circle circle-two"></div>
+      <div class="art-circle circle-three"></div>
+
+      <div class="art-card art-main">
+
+        <div class="art-top">
+          <span>CLASSROOM HEALTH</span>
+          <b>LIVE</b>
         </div>
-        <button class="modal-close">×</button>
+
+        <div class="art-score">
+          <strong>92</strong>
+          <span>%</span>
+        </div>
+
+        <div class="art-progress">
+          <span></span>
+        </div>
+
+        <small>Everything looks good today.</small>
+
       </div>
 
-      <form id="studentForm">
-
-        <div class="form-group">
-          <label>Student name</label>
-          <input name="name" required placeholder="Full name">
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Roll number</label>
-            <input name="roll" required placeholder="MCA011">
-          </div>
-
-          <div class="form-group">
-            <label>Class</label>
-            <input name="class" value="MCA A">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Email</label>
-          <input name="email" type="email" required placeholder="student@example.com">
-        </div>
-
-        <div class="modal-actions">
-          <button type="button" class="button button-light modal-close">Cancel</button>
-          <button type="submit" class="button button-dark">Add student</button>
-        </div>
-
-      </form>
-
-    </div>
-  </div>
-
-  <div class="modal" id="assignmentModal">
-    <div class="modal-card">
-
-      <div class="modal-heading">
-        <div>
-          <span class="eyebrow">NEW RECORD</span>
-          <h2>Create assignment</h2>
-        </div>
-        <button class="modal-close">×</button>
+      <div class="art-card art-small-one">
+        <span>✓</span>
+        <strong>118</strong>
+        <small>Present</small>
       </div>
 
-      <form id="assignmentForm">
-
-        <div class="form-group">
-          <label>Assignment title</label>
-          <input name="title" required placeholder="Assignment title">
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Subject</label>
-            <input name="subject" required placeholder="Subject">
-          </div>
-
-          <div class="form-group">
-            <label>Priority</label>
-            <select name="priority">
-              <option>Medium</option>
-              <option>High</option>
-              <option>Low</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Due date</label>
-          <input name="due" type="date" required>
-        </div>
-
-        <div class="modal-actions">
-          <button type="button" class="button button-light modal-close">Cancel</button>
-          <button type="submit" class="button button-dark">Create assignment</button>
-        </div>
-
-      </form>
-
-    </div>
-  </div>
-
-  <div class="modal" id="announcementModal">
-    <div class="modal-card">
-
-      <div class="modal-heading">
-        <div>
-          <span class="eyebrow">NOTICE BOARD</span>
-          <h2>Publish announcement</h2>
-        </div>
-        <button class="modal-close">×</button>
+      <div class="art-card art-small-two">
+        <span>▤</span>
+        <strong>04</strong>
+        <small>Assignments</small>
       </div>
 
-      <form id="announcementForm">
-
-        <div class="form-group">
-          <label>Title</label>
-          <input name="title" required placeholder="Announcement title">
-        </div>
-
-        <div class="form-group">
-          <label>Type</label>
-          <select name="type">
-            <option>Academic</option>
-            <option>Notice</option>
-            <option>Event</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Message</label>
-          <textarea name="text" required placeholder="Write your announcement..."></textarea>
-        </div>
-
-        <div class="modal-actions">
-          <button type="button" class="button button-light modal-close">Cancel</button>
-          <button type="submit" class="button button-dark">Publish</button>
-        </div>
-
-      </form>
-
     </div>
+
   </div>
 
-  <div class="toast" id="toast">
-    <span class="toast-mark">✓</span>
-    <span class="toast-text"></span>
+</section>
+
+<section class="faq section">
+
+  <div class="faq-heading reveal">
+
+    <span class="eyebrow">07 · FAQ</span>
+
+    <h2>
+      Questions,
+      <span>answered.</span>
+    </h2>
+
   </div>
 
-  <script src="script.js"></script>
+  <div class="faq-list">
+
+    <button class="faq-item reveal">
+      <span>What is SmartClass?</span>
+      <b>+</b>
+      <p>
+        SmartClass is a classroom management platform that brings
+        classes, students, attendance, assignments, schedules and
+        announcements together.
+      </p>
+    </button>
+
+    <button class="faq-item reveal">
+      <span>Who is SmartClass designed for?</span>
+      <b>+</b>
+      <p>
+        SmartClass is designed for schools, teachers and students,
+        with each role getting the information and tools relevant to them.
+      </p>
+    </button>
+
+    <button class="faq-item reveal">
+      <span>Can SmartClass manage attendance?</span>
+      <b>+</b>
+      <p>
+        Yes. Teachers can record attendance and quickly understand
+        classroom attendance performance.
+      </p>
+    </button>
+
+    <button class="faq-item reveal">
+      <span>Can students track assignments?</span>
+      <b>+</b>
+      <p>
+        Yes. Students can view coursework, deadlines and important
+        academic updates from one place.
+      </p>
+    </button>
+
+  </div>
+
+</section>
+
+<section class="cta-section" id="contact">
+
+  <div class="cta-orb"></div>
+
+  <div class="cta-content reveal">
+
+    <span class="eyebrow">READY TO START?</span>
+
+    <h2>
+      Make your classroom
+      <span>feel effortless.</span>
+    </h2>
+
+    <p>
+      One simple system for the people, schedules and activities
+      that keep learning moving.
+    </p>
+
+    <button class="cta-button" id="openModal">
+      Get started with SmartClass
+      <span>↗</span>
+    </button>
+
+  </div>
+
+  <div class="cta-decoration">
+    <div class="deco-card deco-one">CLASS</div>
+    <div class="deco-card deco-two">✓</div>
+    <div class="deco-card deco-three">92%</div>
+    <div class="deco-card deco-four">STUDENT</div>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="footer-main">
+
+    <a href="#home" class="logo footer-logo">
+      <span class="logo-box">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span>SmartClass</span>
+    </a>
+
+    <p>
+      A smarter way to organize,
+      manage and experience the classroom.
+    </p>
+
+  </div>
+
+  <div class="footer-column">
+    <strong>Platform</strong>
+    <a href="#features">Features</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#workflow">How it works</a>
+  </div>
+
+  <div class="footer-column">
+    <strong>Explore</strong>
+    <a href="#why">Why SmartClass</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Get started</a>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 SmartClass</span>
+    <span>Built for better learning.</span>
+  </div>
+
+</footer>
+
+<div class="modal" id="modal">
+
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="modal-box">
+
+    <button class="modal-close" data-close>×</button>
+
+    <div class="modal-logo">SC</div>
+
+    <span class="eyebrow">SMARTCLASS</span>
+
+    <h2>Ready to simplify your classroom?</h2>
+
+    <p>
+      This static SmartClass experience is ready to connect
+      to your real authentication, database and classroom backend.
+    </p>
+
+    <a href="#features" class="primary-button" data-close>
+      Explore platform
+      <span>→</span>
+    </a>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
